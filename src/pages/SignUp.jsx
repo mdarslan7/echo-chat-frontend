@@ -23,9 +23,9 @@ export default function SignUp() {
 
       const data = await res.json();
       if (data.jwt) {
-        localStorage.setItem("jwt", data.jwt); 
+        localStorage.setItem("jwt", data.jwt);
         alert("Signup successful!");
-        window.location.href = "/chat"; 
+        window.location.href = "/chat";
       } else {
         alert("Signup failed: " + data.error.message);
       }
@@ -83,6 +83,17 @@ export default function SignUp() {
             Sign Up
           </button>
         </form>
+
+        {/* Login Button */}
+        <div className="text-center mt-4">
+          <p className="text-sm">Already have an account?</p>
+          <button
+            onClick={() => (window.location.href = "/login")}
+            className="mt-2 w-full p-2 bg-gray-300 text-black font-medium rounded hover:bg-gray-400"
+          >
+            Login
+          </button>
+        </div>
       </div>
     </div>
   );
